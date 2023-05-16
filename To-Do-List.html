@@ -22,6 +22,22 @@ document.getElementById("task").addEventListener("keyup", function(event) {
         document.getElementById("enter").click();
     }
 });
+
+function removeTask(entry){
+ var entry = document.getElementById("entry")
+    for (var rowi= entry.rows.length; rowi-->0;) {
+    var row= entry.rows[rowi];
+    var inputs= row.getElementsByTagName('input'); 
+    
+    for (var inputi= inputs.length; inputi-->0;) {
+     var input= inputs[inputi];
+      if (input.type==='checkbox' && input.checked) {
+      row.parentNode.removeChild(row);
+      break; 
+      } 
+    }
+   }
+  }
 	</script>
     </head>
      <body>
@@ -35,6 +51,6 @@ document.getElementById("task").addEventListener("keyup", function(event) {
         <br /><br />
         <table id="entry" align="center"></table>
         <br /><br />
-        <div align="center"><button id="reset" onclick=resetForm()>Reset</button></div>
+        <table align="center"><tr><td><button id="remove" onclick=removeTask()>Remove</button></td><td><button id="reset" onclick=resetForm()>Reset</button></td></tr></table>
     </body>
 </html>
