@@ -6,7 +6,7 @@
 function  updateEntry(){
     var task1 = document.getElementById("task").value;
     var entry1 = document.getElementById("entry");
-    entry1.innerHTML += '<input type="checkbox"></input>' + task1 + '<br>';
+    entry1.innerHTML += '<tr><td><input type="checkbox"></input></td><td>' + task1 + '</td></tr>';
     document.getElementById('task').value = ""
 }
 
@@ -25,7 +25,7 @@ document.getElementById("task").addEventListener("keyup", function(event) {
 	</script>
     </head>
      <body>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <h1 align="center">To-Do List</h1>
         <br />
         <br />
@@ -33,7 +33,7 @@ document.getElementById("task").addEventListener("keyup", function(event) {
         </input>
         <button id="enter" onclick=updateEntry()>Enter</button></div>
         <br /><br />
-        <table align="center"><td><div id="entry"></div></td></table>
+        <table id="entry" align="center"></table>
         <br /><br />
         <div align="center"><button id="reset" onclick=resetForm()>Reset</button></div>
     </body>
